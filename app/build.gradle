@@ -37,5 +37,20 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    // api('com.paypal.retail:here-sdk-release:2.0.0.201801@aar'){transitive=true}
+    api('com.paypal.retail:here-sdk-debug:2.2.00.20356020@aar'){transitive=true}
+
+    android {
+        packagingOptions {
+            exclude 'META-INF/*.kotlin_module'
+        }
+    }
 }
+
+
     android.defaultConfig.vectorDrawables.useSupportLibrary = true
